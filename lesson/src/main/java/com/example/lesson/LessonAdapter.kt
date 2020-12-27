@@ -36,10 +36,10 @@ class LessonAdapter : RecyclerView.Adapter<LessonViewHolder>() {
 
             setText(R.id.tv_date, lesson.date?:"日期待定")
             setText(R.id.tv_content, lesson.date)
-            val state = lesson.state
-            if (state != null) {
-                setText(R.id.tv_state, state.stateName())
-                val colorRes = when (state) {
+
+            lesson.state?.let {
+                setText(R.id.tv_state, it.stateName())
+                val colorRes = when (it) {
                     Lesson.State.PLAYBACK -> {
 
                         // 即使在 {} 中也是需要 break 的。
@@ -51,6 +51,7 @@ class LessonAdapter : RecyclerView.Adapter<LessonViewHolder>() {
                 val backgroundColor = itemView.context.getColor(colorRes)
                 getView<View>(R.id.tv_state).setBackgroundColor(backgroundColor)
             }
+
         }
 
         companion object {
