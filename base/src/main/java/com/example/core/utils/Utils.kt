@@ -13,12 +13,12 @@ fun dp2px( dp:Float): Float {
 }
 
 object Utils{
-    fun toast( string:String) {
-        toast(string, Toast.LENGTH_SHORT);
-    }
+//    fun toast( string:String) {
+//        toast(string, Toast.LENGTH_SHORT);
+//    }
 
-    fun toast( string:String,  duration:Int) {
-        Toast.makeText(BaseApplication.currentApplication(), string, duration).show();
+    fun toast( string:String,  duration:Int=Toast.LENGTH_SHORT) {
+        Toast.makeText(BaseApplication.currentApplication, string, duration).show();
     }
 }
 

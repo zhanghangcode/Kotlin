@@ -12,7 +12,7 @@ import com.example.app.R
 import com.example.core.utils.dp2px
 import java.util.*
 
-class CodeView: AppCompatTextView {
+class CodeView constructor(context: Context,attr: AttributeSet?): AppCompatTextView(context,null) {
 
     private val paint:Paint= Paint()
     private val codeList= arrayOf("kotlin",
@@ -24,7 +24,7 @@ class CodeView: AppCompatTextView {
             "retrofit",
             "tcp/ip")
     constructor(context: Context):this(context,null)
-    constructor(context: Context,attr: AttributeSet?):super(context,attr) {
+   init {
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
         gravity = Gravity.CENTER
         setBackgroundColor(getContext().getColor(R.color.colorPrimary))
