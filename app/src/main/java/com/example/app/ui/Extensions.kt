@@ -9,3 +9,5 @@ val Float.px
             this,
             Resources.getSystem().displayMetrics
     )
+val Int.dp
+get() = this.toFloat().px
