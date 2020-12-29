@@ -9,11 +9,11 @@ import javax.xml.namespace.NamespaceContext
 import kotlin.math.cos
 import kotlin.math.sin
 
-val RADIUS=150f.px
-const val OPEN_ANGLE=120f
-val LENGTH=120f.px
-val DASH_WIDTH=2f.px
-val DASH_LENGTH=10f.px
+private val RADIUS=150f.px
+private const val OPEN_ANGLE=120f
+private val LENGTH=120f.px
+private val DASH_WIDTH=2f.px
+private val DASH_LENGTH=10f.px
 class DashboardView(context: Context?,attrs: AttributeSet?):
         View(context,attrs){
 
@@ -51,8 +51,8 @@ class DashboardView(context: Context?,attrs: AttributeSet?):
         paint.pathEffect=null
 
         canvas.drawLine(width/2f,height/2f,
-                (width/2f+ LENGTH* cos(markToRadians(10))).toFloat(),
-                (height/2f+ LENGTH* sin(markToRadians(10))).toFloat(),
+                (width/2f+ LENGTH* cos(markToRadians(5))).toFloat(),
+                (height/2f+ LENGTH* sin(markToRadians(5))).toFloat(),
                 paint
         )
 
