@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
@@ -22,6 +23,9 @@ class SportView(context: Context,attrs:AttributeSet?):
         textAlign=Paint.Align.CENTER
     }
 
+    private val bounds=Rect()
+    private val fontMetrics=Paint.FontMetrics()
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
@@ -38,5 +42,21 @@ class SportView(context: Context,attrs:AttributeSet?):
                 height/2f+RADIUS, -90f,225f,false,paint)
 
         //
+        paint.style=Paint.Style.FILL
+//        paint.getTextBounds("abcd",0,"abab".length,bounds)
+     //   canvas.drawText("abab",width/2f,height/2f-(bounds.top+bounds.bottom)/2f,paint)
+        paint.getFontMetrics(fontMetrics)
+        canvas.drawText("qqqq",width/2f,height/2f-(fontMetrics.ascent+fontMetrics.descent)/2f,paint)
+
+        paint.textSize=150f.px
+        paint.textAlign=Paint.Align.LEFT
+        paint.getFontMetrics(fontMetrics)
+        paint.getTextBounds("cbde",0,"cbde".length,bounds)
+        canvas.drawText("cbde",-bounds.left.toFloat(),-bounds.top.toFloat(),paint)
+
+//        canvas.drawText("cbde",0f,-fontMetrics.top,paint)
+        paint.textSize=15.dp
+        paint.getTextBounds("cbde",0,"cbde".length,bounds)
+        canvas.drawText("cbde",-bounds.left.toFloat(),-bounds.top.toFloat(),paint)
     }
 }
