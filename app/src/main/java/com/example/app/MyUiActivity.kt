@@ -1,6 +1,9 @@
 package com.example.app
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app.threadrxjava.Api
@@ -27,30 +30,34 @@ class MyUiActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_myui)
+        drawBadge()
 
-        val single:Single<Int> = Single.just(1)
-        val singleString=single.map(object : Function<Int,String>{
-            override fun apply(t: Int?): String {
-                return t.toString()
-            }
-
-        })
+    }
 
 
-        singleString.subscribe(object :SingleObserver<String?>{
-            override fun onSuccess(t: String?) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onSubscribe(d: Disposable?) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onError(e: Throwable?) {
-                TODO("Not yet implemented")
-            }
-
-        })
+//        val single:Single<Int> = Single.just(1)
+//        val singleString=single.map(object : Function<Int,String>{
+//            override fun apply(t: Int?): String {
+//                return t.toString()
+//            }
+//
+//        })
+//
+//
+//        singleString.subscribe(object :SingleObserver<String?>{
+//            override fun onSuccess(t: String?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onSubscribe(d: Disposable?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onError(e: Throwable?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        })
 
 //        textView=findViewById(R.id.textview)
 //
@@ -80,7 +87,7 @@ class MyUiActivity:AppCompatActivity() {
 //
 //
 //                })
-    }
+
 
     override fun onDestroy() {
         disposable?.isDisposed

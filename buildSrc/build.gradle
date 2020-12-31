@@ -1,0 +1,12 @@
+repositories {
+    google()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.android.tools.build:gradle:4.0.1'
+}
+
+println 3
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

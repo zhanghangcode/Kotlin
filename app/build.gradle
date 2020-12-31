@@ -1,9 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'LegendCoder'
+
 
 android {
     compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
     defaultConfig {
         applicationId "com.example.hencoder"
         minSdkVersion 24
@@ -11,7 +15,41 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    buildTypes {
+        internal{
+            initWith debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+//    flavorDimensions 'paying','nation'
+//    productF lavors{
+//        free{
+//            dimension'paying'
+//        }
+//        paid{
+//            dimension'paying'
+//        }
+//        japan{
+//            dimension'nation'
+//        }
+//        global{
+//            dimension'nation'
+//        }
+//
+//    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
