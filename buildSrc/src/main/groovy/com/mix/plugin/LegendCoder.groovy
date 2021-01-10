@@ -11,4 +11,5 @@ class LegendCoder implements Plugin<Project> {
              println "Hello ${extension.name}"
          }
      }
- }
+
+}

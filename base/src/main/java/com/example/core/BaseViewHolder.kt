@@ -19,6 +19,7 @@ abstract class BaseViewHolder : RecyclerView.ViewHolder {
            view= itemView.findViewById(id)
            viewHashMap[id]=view
        }
+
        return view as T
    }
        open fun setText(id: Int,text:String?){
