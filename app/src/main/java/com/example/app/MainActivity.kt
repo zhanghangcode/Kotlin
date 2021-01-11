@@ -11,15 +11,21 @@ import com.example.app.widget.CodeView
 import com.example.core.utils.CacheUtils
 import com.example.core.utils.Utils
 import com.example.lesson.LessonActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity:AppCompatActivity(), View.OnClickListener {
 
     private val usernameKey:String="username"
     private val passwordKey:String="password"
 
+
+
     lateinit var et_username:EditText
     lateinit var et_password:EditText
     lateinit var et_code:EditText
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

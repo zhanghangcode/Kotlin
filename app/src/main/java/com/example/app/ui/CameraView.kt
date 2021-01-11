@@ -29,10 +29,28 @@ class CameraView(context: Context,attrs:AttributeSet):View(context,attrs) {
         camera.setLocation(0f,0f,-6 * resources.displayMetrics.density)
     }
     override fun onDraw(canvas: Canvas) {
+
+        //上半部分
+        canvas.save()
         canvas.translate(BITMAP_PADDING+ BITMAP_SIZE/2,BITMAP_PADDING+ BITMAP_SIZE/2)
-        camera.applyToCanvas(canvas)
+        canvas.rotate(-30f)
+        canvas.clipRect(-BITMAP_SIZE, -BITMAP_SIZE,BITMAP_SIZE,0f)
+        canvas.rotate(30f)
         canvas.translate(-(BITMAP_PADDING+ BITMAP_SIZE/2),-(BITMAP_PADDING+ BITMAP_SIZE/2))
         canvas.drawBitmap(bitmap, BITMAP_PADDING, BITMAP_PADDING,paint)
+        canvas.restore()
+
+        //下半部分
+        canvas.save()
+        canvas.translate(BITMAP_PADDING+ BITMAP_SIZE/2,BITMAP_PADDING+ BITMAP_SIZE/2)
+        canvas.rotate(-30f)
+        camera.applyToCanvas(canvas)
+        canvas.clipRect(-BITMAP_SIZE, 0f,BITMAP_SIZE, BITMAP_SIZE)
+        canvas.rotate(30f)
+        canvas.translate(-(BITMAP_PADDING+ BITMAP_SIZE/2),-(BITMAP_PADDING+ BITMAP_SIZE/2))
+        canvas.drawBitmap(bitmap, BITMAP_PADDING, BITMAP_PADDING,paint)
+        canvas.restore()
+
     }
     private fun getAvatar(width:Int):Bitmap{
        val options=BitmapFactory.Options()

@@ -9,9 +9,6 @@ class BaseApplication:Application() {
          lateinit var currentApplication:Context
             private set
 
-//        fun currentApplication():Context{
-//            return currentApplication
-//        }
     }
 
     override fun onCreate() {
