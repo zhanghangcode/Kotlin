@@ -39,21 +39,21 @@ class MyUiActivity:AppCompatActivity() {
         drawBadge()
 
 
-//        val bottomFlipAnimator=ObjectAnimator.ofFloat(view,"bottomFilp",60f)
-//        bottomFlipAnimator.startDelay=1000
-//        bottomFlipAnimator.duration=1000
+        val bottomFlipAnimator=ObjectAnimator.ofFloat(view,"bottomFlip",60f)
+        bottomFlipAnimator.startDelay=1000
+        bottomFlipAnimator.duration=1000
 
-//        val flipFlipAnimator=ObjectAnimator.ofFloat(view,"flipRotation",270f)
-//        flipFlipAnimator.startDelay=200
-//        flipFlipAnimator.duration=1000
-//
-//        val topFlipAnimator=ObjectAnimator.ofFloat(view,"topFlip",-60f)
-//        topFlipAnimator.startDelay=200
-//        topFlipAnimator.duration=1000
-//
-//        val animatorSet=AnimatorSet()
-//        animatorSet.playSequentially(bottomFlipAnimator,flipFlipAnimator,topFlipAnimator)
-//        animatorSet.start()
+        val flipFlipAnimator=ObjectAnimator.ofFloat(view,"flipRotation",270f)
+        flipFlipAnimator.startDelay=200
+        flipFlipAnimator.duration=1000
+
+        val topFlipAnimator=ObjectAnimator.ofFloat(view,"topFlip",-60f)
+        topFlipAnimator.startDelay=200
+        topFlipAnimator.duration=1000
+
+        val animatorSet=AnimatorSet()
+        animatorSet.playSequentially(bottomFlipAnimator,flipFlipAnimator,topFlipAnimator)
+        animatorSet.start()
 //
 //        val bottomFlipAHolder=PropertyValuesHolder.ofFloat("bottomFilp",60f)
 //        val flipFlipAHolder=PropertyValuesHolder.ofFloat("flipRotation",270f)
@@ -64,18 +64,18 @@ class MyUiActivity:AppCompatActivity() {
 //        holderAnimator.duration=2000
 //        holderAnimator.start()
 
-        val length=200.dp
-        val keyframe1=Keyframe.ofFloat(0f,0f)
-        val keyframe2=Keyframe.ofFloat(1.2f,0.4f*length)
-        val keyframe3=Keyframe.ofFloat(0.8f,0.6f*length)
-        val keyframe4=Keyframe.ofFloat(1f,1f*length)
-
-        val keyframeHolder=PropertyValuesHolder.ofKeyframe("translationX",keyframe1,keyframe2,keyframe3,keyframe4)
-
-        val animator=ObjectAnimator.ofPropertyValuesHolder(view,keyframeHolder)
-        animator.startDelay=1000
-        animator.duration=2000
-        animator.start()
+//        val length=200.dp
+//        val keyframe1=Keyframe.ofFloat(0f,0f)
+//        val keyframe2=Keyframe.ofFloat(1.2f,0.4f*length)
+//        val keyframe3=Keyframe.ofFloat(0.8f,0.6f*length)
+//        val keyframe4=Keyframe.ofFloat(1f,1f*length)
+//
+//        val keyframeHolder=PropertyValuesHolder.ofKeyframe("translationX",keyframe1,keyframe2,keyframe3,keyframe4)
+//
+//        val animator=ObjectAnimator.ofPropertyValuesHolder(view,keyframeHolder)
+//        animator.startDelay=1000
+//        animator.duration=2000
+//        animator.start()
     }
 
 

@@ -19,15 +19,6 @@ class PieView(context: Context?,attrs: AttributeSet?):
 
     private val paint=Paint(Paint.ANTI_ALIAS_FLAG)
 
-
-    init {
-    }
-
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-
-    }
-
-
     override fun onDraw(canvas: Canvas) {
 
         var startAngle=0f
@@ -41,7 +32,9 @@ class PieView(context: Context?,attrs: AttributeSet?):
            }
             canvas.drawArc(width/2f- RADIUS,height/2f- RADIUS,width/2f+ RADIUS,height/2f+ RADIUS
                     ,startAngle,angle,true,paint)
+
             startAngle+=angle
+
             if (index==2){
                 canvas.restore()
             }
