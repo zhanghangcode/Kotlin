@@ -37,23 +37,25 @@ class MyUiActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_myui)
         drawBadge()
+        val animator = ObjectAnimator.ofFloat(view, "radius", 150.dp)
+        animator.startDelay=1000
+        animator.start()
 
-
-        val bottomFlipAnimator=ObjectAnimator.ofFloat(view,"bottomFlip",60f)
-        bottomFlipAnimator.startDelay=1000
-        bottomFlipAnimator.duration=1000
-
-        val flipFlipAnimator=ObjectAnimator.ofFloat(view,"flipRotation",270f)
-        flipFlipAnimator.startDelay=200
-        flipFlipAnimator.duration=1000
-
-        val topFlipAnimator=ObjectAnimator.ofFloat(view,"topFlip",-60f)
-        topFlipAnimator.startDelay=200
-        topFlipAnimator.duration=1000
-
-        val animatorSet=AnimatorSet()
-        animatorSet.playSequentially(bottomFlipAnimator,flipFlipAnimator,topFlipAnimator)
-        animatorSet.start()
+//        val bottomFlipAnimator=ObjectAnimator.ofFloat(view,"bottomFlip",60f)
+//        bottomFlipAnimator.startDelay=1000
+//        bottomFlipAnimator.duration=1000
+//
+//        val flipFlipAnimator=ObjectAnimator.ofFloat(view,"flipRotation",270f)
+//        flipFlipAnimator.startDelay=200
+//        flipFlipAnimator.duration=1000
+//
+//        val topFlipAnimator=ObjectAnimator.ofFloat(view,"topFlip",-60f)
+//        topFlipAnimator.startDelay=200
+//        topFlipAnimator.duration=1000
+//
+//        val animatorSet=AnimatorSet()
+//        animatorSet.playSequentially(bottomFlipAnimator,flipFlipAnimator,topFlipAnimator)
+//        animatorSet.start()
 //
 //        val bottomFlipAHolder=PropertyValuesHolder.ofFloat("bottomFilp",60f)
 //        val flipFlipAHolder=PropertyValuesHolder.ofFloat("flipRotation",270f)

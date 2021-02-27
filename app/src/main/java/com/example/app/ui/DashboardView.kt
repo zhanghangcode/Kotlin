@@ -21,11 +21,10 @@ class DashboardView(context: Context?,attrs: AttributeSet?):
     private val path=Path()
     private lateinit var pathEffect: PathEffect
     private val paint=Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            strokeWidth=3f.px
             style=Paint.Style.STROKE
-
-
+            strokeWidth=3f.px
     }
+
 
 
     init {
@@ -33,6 +32,7 @@ class DashboardView(context: Context?,attrs: AttributeSet?):
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+
         path.reset()
         path.addArc(width/2f-RADIUS,height/2f-RADIUS,width/2f+RADIUS,height/2f+RADIUS,
                 90+ OPEN_ANGLE/2f,360- OPEN_ANGLE)
