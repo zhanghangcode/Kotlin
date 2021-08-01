@@ -34,6 +34,19 @@ class MaterialEditText(context: Context?,attrs:AttributeSet?):
 //    private val animatoranimatorReverse by lazy {
 //        ObjectAnimator.ofFloat(this,"floatingLabelFraction",0f)
 //    }
+    var useFloatingLable =true
+        set(value){
+            if (field!=value){
+                field=value
+                if (field){
+                    setPadding(paddingLeft,(paddingTop+TEXT_SIZE+TEXT_MARGIN).toInt(),
+                            paddingRight,paddingBottom)
+                }else{
+                    setPadding(paddingLeft,(paddingTop-TEXT_SIZE-TEXT_MARGIN).toInt(),
+                            paddingRight,paddingBottom)
+                }
+            }
+        }
 
     private val animator by lazy {
         ObjectAnimator.ofFloat(this,"floatingLabelFraction",0f,1f)
@@ -41,8 +54,11 @@ class MaterialEditText(context: Context?,attrs:AttributeSet?):
 
     init {
         paint.textSize = TEXT_SIZE
-        setPadding(paddingLeft,(paddingTop+ TEXT_SIZE+ TEXT_MARGIN).toInt(),
-                paddingRight,paddingBottom)
+
+        if (useFloatingLable){
+            setPadding(paddingLeft,(paddingTop+ TEXT_SIZE+ TEXT_MARGIN).toInt(),
+                    paddingRight,paddingBottom)
+        }
     }
 
     override fun onTextChanged(text: CharSequence?, start: Int, lengthBefore: Int, lengthAfter: Int) {

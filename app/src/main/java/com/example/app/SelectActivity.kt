@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_select.*
 /**
  * @Date 執筆時間 2021/01/11 18:49
  * @Author Caden
- * @Description
+ * @Description 最初画面のクラス
  * @Email code_legend@163.com
  * @Vesion 1.0
  */
